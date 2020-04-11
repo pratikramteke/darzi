@@ -2,7 +2,6 @@ import 'package:darzi/screens/customer/customerhome.dart';
 import 'package:darzi/screens/tailors/tailorswrapper.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'customer/test.dart';
 
 class Modules extends StatefulWidget {
   @override
