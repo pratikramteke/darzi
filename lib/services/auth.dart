@@ -121,19 +121,7 @@ class AuthService{
   
 
   //register customer with email & password
-  Future registercustomerWithEmailAndPassword(String firstname,String lastname,String email,String mobileno,String password) async{
-    try{
-      AuthResult result = await _authcustomer.createUserWithEmailAndPassword(email: email, password: password);
-      FirebaseUser user= result.user;
-      
-      //create a new document for the user with the uid
-      await DatabaseService(uid: user.uid).updatecustomersdata(firstname,lastname, email,mobileno);
-      return _customerFromFirebaseUser(user);
-    } catch(e){
-        print(e.toString());
-      return null;
-    }
-  }
+
 
   //sign out
   Future signOutcustomer() async{

@@ -10,20 +10,23 @@ class AboutUs extends StatelessWidget {
         child: Column(
           children: <Widget>[
             Text("Darzi is a mobile application, Run by @ S.B Jain Institute of Technology Management and Research.", 
-              style: TextStyle(fontSize: 30.0,),
-               textAlign: TextAlign.values[4],
+              style: TextStyle(fontSize: 25.0,),
+               textAlign: TextAlign.justify,
             ),
+            SizedBox(height: 15.0,),
             //Divider(height: 5,)
             Text("Our purpose is to provide the facility to find , compare and search the best tailors as well as experience plays which  plays a vital role.",
-             style: TextStyle(fontSize: 30.0,),
-                    textAlign: TextAlign.values[4],
-            )
+             style: TextStyle(fontSize: 25.0,),
+                    textAlign: TextAlign.justify,
+            ),
+            SizedBox(height: 15.0,),
+            Text("Darzi is led by its co-founders Prateek Motwani & Prateek Ramteke"+
+              " who formed the fast growing application in early 2020.",
+             style: TextStyle(fontSize: 25.0,),
+                    textAlign: TextAlign.justify,
+            ),
           ],
         )
-      
-      
-      
-      
       )
     );
   }

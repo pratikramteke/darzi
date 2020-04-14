@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:darzi/models/tailors.dart';
 
 
 class DatabaseService{
@@ -9,7 +10,7 @@ class DatabaseService{
   DatabaseService({this.uid});
 
   //collection reference
-  final CollectionReference tailorscollection = Firestore.instance.collection('narmada');
+  final CollectionReference tailorscollection = Firestore.instance.collection('tailors');
   
   Future updatetailorsdata(String firstname,String lastname,String email,String mobileno,String password) async {
     return await tailorscollection.document(uid).setData({
@@ -46,36 +47,17 @@ class DatabaseService{
   }
 
 
- // tailors list from snapshot
-  // List<Tailor> _tailorslistfromsnapshot(QuerySnapshot snapshot){
-  //   return snapshot.documents.map((doc){
-  //     return Tailors(
-  //       firstname:doc.data['name'] ?? '',
-  //       lastname: doc.data['lastname'] ?? '',
-  //       email: doc.data['email'] ?? '',
-  //       mobileno: doc.data['mobileno'] ?? 0
-  //     );
-  //   }).toList();
-  // }
-
-  // //get tailors data
-  // Stream<List<Tailor>> get tailorsdata{
-  //   return tailorscollection.snapshots().map(_tailorslistfromsnapshot);
-  // }
-
-  //CUSTOMER MODULE
-
-  //collection reference
-
-  final CollectionReference customerscollection = Firestore.instance.collection('customers');
-
-  Future updatecustomersdata(String firstname,String lastname,String email,String mobileno) async {
-    return await customerscollection.document(uid).setData({
-      'First Name':firstname,
-      'Last Name':lastname,
-      'Email':email,
-      'Mobile Number':mobileno,
-    });
+// tailors list from snapshot
+  List<Tailors> _tailorslistfromsnapshot(QuerySnapshot snapshot){
+    return snapshot.documents.map((doc){
+      return Tailors(
+        city:doc.data['City'] ?? '',
+      );
+    }).toList();
   }
 
+  //get tailors data
+  Stream<List<Tailors>> get tailorsdata{
+    return tailorscollection.snapshots().map(_tailorslistfromsnapshot);
+  }
 }

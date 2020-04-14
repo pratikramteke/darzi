@@ -26,21 +26,21 @@ class _CustomerHomePageState extends State<CustomerHomePage> {
                   onChanged: (value){
                     _selectedGender=value;
                     switch(value){
-                      case "katol" :
+                      case "Katol Naka" :
                       String key='katol';
                         Navigator.push(
                           context,
                           MaterialPageRoute(builder: (context) => Test(mainkey:key)),
                         );
                         break;
-                      case "narmada" :
+                      case "Narmada Colony" :
                         String key='narmada';
                         Navigator.push(
                           context,
                           MaterialPageRoute(builder: (context) => Test(mainkey:key)),
                         );
                         break;
-                      case "friends" :
+                      case "Friends Colony" :
                         String key='friends';
                         Navigator.push(
                           context,
@@ -59,7 +59,7 @@ class _CustomerHomePageState extends State<CustomerHomePage> {
   }
 }
 List<DropdownMenuItem<String>> _dropDownItem() {
-      List<String> ddl = ["katol", "narmada", "friends"];
+      List<String> ddl = ["Katol Naka", "Narmada Colony", "Friends Colony"];
       return ddl.map(
               (value) =>
               DropdownMenuItem(

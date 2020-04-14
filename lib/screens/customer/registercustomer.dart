@@ -1,6 +1,4 @@
-import 'package:darzi/screens/customer/test.dart';
 import 'package:flutter/material.dart';
-import 'package:darzi/services/auth.dart';
 class Registercustomer extends StatefulWidget {
 
   final Function toggleview;
@@ -12,7 +10,6 @@ class Registercustomer extends StatefulWidget {
 
 class _RegistercustomerState extends State<Registercustomer> {
 
-  final AuthService _auth = AuthService();
   final _formkey =GlobalKey<FormState>();
   String _email;
   String _password;
@@ -204,14 +201,14 @@ class _RegistercustomerState extends State<Registercustomer> {
                               print(_mobileno);
                               print(_password);
                               if(_formkey.currentState.validate()){
-                              dynamic result=await _auth.registercustomerWithEmailAndPassword(_firstname,_lastname,_email,_mobileno,_password);
+                             // dynamic result=await _auth.registercustomerWithEmailAndPassword(_firstname,_lastname,_email,_mobileno,_password);
                                 
-                                if(result == null){
-                                  setState(() => error = 'please supply a valid email');
-                                }
-                                else{
-                                  Navigator.push(context,MaterialPageRoute(builder: (context) => Test()),);
-                                }
+                                // if(result == null){
+                                //   setState(() => error = 'please supply a valid email');
+                                // }
+                                // else{
+                                //   Navigator.push(context,MaterialPageRoute(builder: (context) => Test()),);
+                                // }
                               }
                             },
                           ),
