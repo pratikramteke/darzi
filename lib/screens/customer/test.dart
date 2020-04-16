@@ -34,7 +34,7 @@ class _TestState extends State<Test> {
   @override Widget build(BuildContext context) {
 return Material(
   child:   Scaffold(
-    appBar: new AppBar(title: Text("List of Darzi"),backgroundColor: Colors.orangeAccent,),
+    appBar: new AppBar(title: Text("List of Darzi")),
       body:new StreamBuilder<QuerySnapshot>(
       stream: Firestore.instance.collection(mainkey).snapshots(),
       builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
@@ -43,7 +43,7 @@ return Material(
         return new ListView(
           children: snapshot.data.documents.map((DocumentSnapshot document) {
             return Card(
-              color:Colors.grey,
+              color:Colors.orange[200],
                 child: new ListTile(
                 title: new Text(document['Shop Name']),
                 subtitle: new Text(document['Shopaddress']),

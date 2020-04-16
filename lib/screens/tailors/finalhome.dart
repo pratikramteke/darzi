@@ -51,6 +51,9 @@ _UserDashboardState(){
         _ubsprice=doc.data['Gents Upper Body Stitching Price'] ?? '';
         _lbsprice=doc.data['Gents Lower Body Stitching Price'] ?? '';
         _fbsprice=doc.data['Gents Full Body Stitching Price'] ?? '';
+        _ubsprice1=doc.data['Ladies Upper Body Stitching Price'] ?? '';
+        _lbsprice1=doc.data['Ladies Lower Body Stitching Price'] ?? '';
+        _fbsprice1=doc.data['Ladies Full Body Stitching Price'] ?? '';
       setState(() {
         
       });
@@ -181,22 +184,42 @@ final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
               return alertDialog;
             }
         ),
-        body: Column(
-          children: <Widget>[
-            ListTile(
-              title: Text('Gents Upper Body Stitching Price'),
-              subtitle: Text(_ubsprice),
-            ),
-            ListTile(
-               title: Text('Gents Lower Body Stitching Price'),
-              subtitle: Text(_lbsprice),
-            ),
-            ListTile(
-               title: Text('Gents Full Body Stitching Price'),
-              subtitle: Text(_fbsprice),
-            ),
-        
-          ],
+        body: AlertDialog(
+                  content: Column(
+            children: <Widget>[
+              if(_ubsprice!='')
+              ListTile(
+                title: Text('Gents Upper Body Stitching Price'),
+                subtitle: Text(_ubsprice),
+              ),
+              if(_lbsprice!='')
+              ListTile(
+                 title: Text('Gents Lower Body Stitching Price'),
+                subtitle: Text(_lbsprice),
+              ),
+              if(_fbsprice!='')
+              ListTile(
+                 title: Text('Gents Full Body Stitching Price'),
+                subtitle: Text(_fbsprice),
+              ),
+              if(_ubsprice1!='')
+              ListTile(
+                title: Text('Ladies Upper Body Stitching Price'),
+                subtitle: Text(_ubsprice1),
+              ),
+              if(_lbsprice1!='')
+              ListTile(
+                 title: Text('Ladies Lower Body Stitching Price'),
+                subtitle: Text(_lbsprice1),
+              ),
+              if(_fbsprice1!='')
+              ListTile(
+                 title: Text('Ladies Full Body Stitching Price'),
+                subtitle: Text(_fbsprice1),
+              ),
+          
+            ],
+          ),
         )
          );
         

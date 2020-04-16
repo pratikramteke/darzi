@@ -41,7 +41,7 @@ class _Test1State extends State<Test1> {
       child:  Scaffold(
         appBar: AppBar(title: Text('Darzi Details'),),
         body:  AlertDialog(
-          backgroundColor: Colors.grey,
+          backgroundColor: Colors.orange[200],
           content: new SingleChildScrollView(
             child: new Column(
               mainAxisSize: MainAxisSize.min,

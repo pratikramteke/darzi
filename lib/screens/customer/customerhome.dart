@@ -14,7 +14,7 @@ class _CustomerHomePageState extends State<CustomerHomePage> {
   Widget build(BuildContext context) {
     return new Scaffold(
       appBar: AppBar(title: Text('customer home page'),),
-      backgroundColor: Colors.grey,
+      backgroundColor: Colors.orange[200],
       body: Center(
         child: Center(
           child: Column(
