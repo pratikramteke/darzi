@@ -18,9 +18,8 @@ class _CustomerHomePageState extends State<CustomerHomePage> {
       body: Center(
         child: Center(
           child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                DropdownButton(
+                DropdownButtonFormField(
                   value: _selectedGender,
                   items: _dropDownItem(),
                   onChanged: (value){
