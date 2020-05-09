@@ -55,22 +55,22 @@ class AuthService{
     }
   }
 
-  Future tailordata(shopname,contactno,specilization,dropdownvalue,_shopaddress,_city,currentItemSelected,_country,_pincode)async{
+  Future tailordata(shopname,contactno,t1,t2,dropdownvalue,_shopaddress,_city,currentItemSelected,_country,_pincode)async{
     try{
       FirebaseUser result= await _authtailor.currentUser();
       FirebaseUser user=result;
-      await DatabaseService(uid:user.uid).tailordata(shopname,contactno,specilization,dropdownvalue,_shopaddress,_city,currentItemSelected,_country,_pincode);
+      await DatabaseService(uid:user.uid).tailordata(shopname,contactno,t1,t2,dropdownvalue,_shopaddress,_city,currentItemSelected,_country,_pincode);
     }catch(e){
       print(e.toString());
       return null;
     }
   }
 
-  Future tailordataextra(_ubsprice,_lbsprice,_fbsprice,_ubsprice1,_lbsprice1,_fbsprice1)async{
+  Future tailordataextra(_offer,_ubsprice,_lbsprice,_fbsprice,_ubsprice1,_lbsprice1,_fbsprice1)async{
     try{
       FirebaseUser result= await _authtailor.currentUser();
       FirebaseUser user=result;
-      await DatabaseService(uid:user.uid).tailordataextra(_ubsprice,_lbsprice,_fbsprice,_ubsprice1,_lbsprice1,_fbsprice1);
+      await DatabaseService(uid:user.uid).tailordataextra(_offer,_ubsprice,_lbsprice,_fbsprice,_ubsprice1,_lbsprice1,_fbsprice1);
     }catch(e){
       print(e.toString());
       return null;

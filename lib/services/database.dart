@@ -21,11 +21,12 @@ class DatabaseService{
       'Password':password
     });
   }
-  Future tailordata(shopname,contactno,specilization,dropdownvalue,_shopaddress,_city,currentItemSelected,_country,_pincode)async{
+  Future tailordata(shopname,contactno,t1,t2,dropdownvalue,_shopaddress,_city,currentItemSelected,_country,_pincode)async{
     return await tailorscollection.document(uid).updateData({
       'Shop Name':shopname,
       'Contact No':contactno,
-      'Specilization':specilization,
+      'Opening Time':t1,
+      'Closing Time':t2,
       'Stitching done for':dropdownvalue,
       'Shopaddress':_shopaddress,
       'City':_city,
@@ -35,8 +36,9 @@ class DatabaseService{
     });
   }
 
-  Future tailordataextra(_ubsprice,_lbsprice,_fbsprice,_ubsprice1,_lbsprice1,_fbsprice1)async{
+  Future tailordataextra(_offer,_ubsprice,_lbsprice,_fbsprice,_ubsprice1,_lbsprice1,_fbsprice1)async{
     return await tailorscollection.document(uid).updateData({
+      'Current Offer':_offer,
       'Gents Upper Body Stitching Price':_ubsprice,
       'Gents Lower Body Stitching Price':_lbsprice,
       'Gents Full Body Stitching Price':_fbsprice,

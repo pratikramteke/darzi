@@ -5,7 +5,9 @@ class Test1 extends StatefulWidget {
   final String address;
   final String name;
   final String contactno;
-  final String specilization;
+  final String t1;
+  final String t2;
+  final String offer;
   final String city;
   final String check;
   final String ubsprice;
@@ -14,9 +16,9 @@ class Test1 extends StatefulWidget {
   final String ubsprice1;
   final String lbsprice1;
   final String fbsprice1;
-  Test1({Key key,this.shopname,this.address,this.name,this.contactno,this.specilization,this.city,this.ubsprice,this.lbsprice,this.fbsprice,this.ubsprice1,this.lbsprice1,this.fbsprice1,this.check}):super(key:key);
+  Test1({Key key,this.shopname,this.address,this.name,this.contactno,this.t1,this.t2,this.offer,this.city,this.ubsprice,this.lbsprice,this.fbsprice,this.ubsprice1,this.lbsprice1,this.fbsprice1,this.check}):super(key:key);
   @override
-  _Test1State createState() => _Test1State(this.shopname,this.address,this.name,this.contactno,this.specilization,this.city,this.ubsprice,this.lbsprice,this.fbsprice,this.ubsprice1,this.lbsprice1,this.fbsprice1,this.check);
+  _Test1State createState() => _Test1State(this.shopname,this.address,this.name,this.contactno,this.t1,this.t2,this.offer,this.city,this.ubsprice,this.lbsprice,this.fbsprice,this.ubsprice1,this.lbsprice1,this.fbsprice1,this.check);
 }
 
 class _Test1State extends State<Test1> {
@@ -24,7 +26,9 @@ class _Test1State extends State<Test1> {
   String address;
   String name;
   String contactno;
-  String specilization;
+  String t1;
+  String t2;
+  String offer;
   String city;
   String check;
   String ubsprice;
@@ -34,7 +38,7 @@ class _Test1State extends State<Test1> {
   String lbsprice1;
   String fbsprice1;
 
-  _Test1State(this.shopname,this.address,this.name,this.contactno,this.specilization,this.city,this.ubsprice,this.lbsprice,this.fbsprice,this.ubsprice1,this.lbsprice1,this.fbsprice1,this.check);
+  _Test1State(this.shopname,this.address,this.name,this.contactno,this.t1,this.t2,this.offer,this.city,this.ubsprice,this.lbsprice,this.fbsprice,this.ubsprice1,this.lbsprice1,this.fbsprice1,this.check);
   @override
   Widget build(BuildContext context) {
     return Material(
@@ -86,8 +90,16 @@ class _Test1State extends State<Test1> {
                   }
                 ),
                 ListTile(
-                  title: Text('SPECILIZATION'),
-                  subtitle: Text(specilization,textScaleFactor: 1.3)
+                  title: Text('Opening Time'),
+                  subtitle: Text(t1,textScaleFactor: 1.3),
+                ),
+                ListTile(
+                  title: Text('Closing Time'),
+                  subtitle:Text(t2,textScaleFactor: 1.3)
+                ),
+                ListTile(
+                  title: Text('Offer'),
+                  subtitle: Text(offer,textScaleFactor: 1.3),
                 ),
                 ListTile(
                   title: Text('CITY'),

@@ -37,6 +37,7 @@ String _fbsprice;
 String _ubsprice1;
 String _lbsprice1;
 String _fbsprice1;
+String _offer;
 
 
 _UserDashboardState(){
@@ -48,6 +49,7 @@ _UserDashboardState(){
     var data = mainRef.document(user.uid);
     data.snapshots().map((doc){
        // Tailors(city: doc.data['City']);
+       _offer=doc.data['Current Offer'] ?? '';
         _ubsprice=doc.data['Gents Upper Body Stitching Price'] ?? '';
         _lbsprice=doc.data['Gents Lower Body Stitching Price'] ?? '';
         _fbsprice=doc.data['Gents Full Body Stitching Price'] ?? '';
@@ -91,6 +93,11 @@ final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
                       key: _formKey,
                       child: Column (
                       children:<Widget>[
+                        TextFormField(
+                          decoration: InputDecoration(labelText:"Current Offer"),
+                          keyboardType:TextInputType.text,
+                          onSaved: (String val) => _offer = val,
+                        ),
                         TextFormField(
                           
                           decoration: InputDecoration(labelText: "Upper Body Stitching Price"),
@@ -165,7 +172,7 @@ final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
                                 print(_ubsprice1);
                                 print(_lbsprice1);
                                 print(_fbsprice1);
-                               dynamic result=await _auth.tailordataextra(_ubsprice,_lbsprice,_fbsprice,_ubsprice1,_lbsprice1,_fbsprice1);
+                               dynamic result=await _auth.tailordataextra(_offer,_ubsprice,_lbsprice,_fbsprice,_ubsprice1,_lbsprice1,_fbsprice1);
                                  if(result == null){
                                    setState(() => print("error"));
                                  }
@@ -187,6 +194,10 @@ final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
         body: AlertDialog(
                   content: Column(
             children: <Widget>[
+              ListTile(
+                title: Text('Current Offer'),
+                subtitle: Text(_offer),
+              ),
               if(_ubsprice!='')
               ListTile(
                 title: Text('Gents Upper Body Stitching Price'),

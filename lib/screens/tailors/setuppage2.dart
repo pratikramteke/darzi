@@ -4,20 +4,22 @@ import 'package:flutter/material.dart';
 class Setuppage2 extends StatefulWidget {
   final String shopname;
   final String contactno;
-  final String specilization;
+  final String t1;
+  final String t2;
   final String dropdownvalue;
-  Setuppage2({Key key,this.shopname,this.contactno,this.specilization,this.dropdownvalue}): super(key:key);
+  Setuppage2({Key key,this.shopname,this.contactno,this.t1,this.t2,this.dropdownvalue}): super(key:key);
   @override
-  _Setuppage2State createState() => _Setuppage2State(this.shopname,this.contactno,this.specilization,this.dropdownvalue);
+  _Setuppage2State createState() => _Setuppage2State(this.shopname,this.contactno,this.t1,this.t2,this.dropdownvalue);
 }
 
 class _Setuppage2State extends State<Setuppage2> {
   final AuthService _auth = AuthService();
   String shopname;
   String contactno;
-  String specilization;
+  String t1;
+  String t2;
   String dropdownvalue;
-  _Setuppage2State(this.shopname,this.contactno,this.specilization,this.dropdownvalue);
+  _Setuppage2State(this.shopname,this.contactno,this.t1,this.t2,this.dropdownvalue);
   String _shopaddress;
   String _city;
   var _selectstate = ['Andhra Pradesh','Arunachal Pradesh','Assam','Bihar',
@@ -166,14 +168,15 @@ class _Setuppage2State extends State<Setuppage2> {
                             globalKey.currentState.showSnackBar(snackBar);
                             print(shopname);
                               print(contactno);
-                              print(specilization);
+                              print(t1);
+                              print(t2);
                               print(dropdownvalue);
                               print(_shopaddress);
                               print(_city);
                               print(currentItemSelected);
                               print(_country);
                               print(_pincode);
-                            dynamic result=await _auth.tailordata(shopname,contactno,specilization,dropdownvalue,_shopaddress,_city,currentItemSelected,_country,_pincode);
+                            dynamic result=await _auth.tailordata(shopname,contactno,t1,t2,dropdownvalue,_shopaddress,_city,currentItemSelected,_country,_pincode);
                                if(result == null){
                                  setState(() => print("error"));
                                }

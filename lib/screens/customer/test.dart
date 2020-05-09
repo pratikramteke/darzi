@@ -14,7 +14,8 @@ class _TestState extends State<Test> {
   String address;
   String name;
   String contactno;
-  String specilization;
+  String t1;
+  String t2;
   String city;
   String _ubsprice;
   String _lbsprice;
@@ -23,6 +24,7 @@ class _TestState extends State<Test> {
   String _lbsprice1;
   String _fbsprice1;
   String check;
+  String offer;
   String dropdownvalue='gents';
   List<String> dropdownitems=<String>[
     'gents',
@@ -55,7 +57,9 @@ return Material(
                   address=document['Shopaddress'];
                   name=document['First Name'];
                   contactno=document['Mobile Number'];
-                  specilization=document['Specilization'];
+                  t1=document['Opening Time'];
+                  t2=document['Closing Time'];
+                  offer=document['Offer'];
                   city=document['City'];
                   check=document['Stitching done for'];
                   _ubsprice=document['Gents Upper Body Stitching Price'];
@@ -64,7 +68,7 @@ return Material(
                   _ubsprice1=document['Ladies Upper Body Stitching Price'];
                   _lbsprice1=document['Ladies Lower Body Stitching Price'];
                   _fbsprice1=document['Ladies Full Body Stitching Price'];
-                  Navigator.push(context,MaterialPageRoute(builder: (context) => Test1(shopname:shopname,address:address,name:name,contactno:contactno,specilization:specilization,city:city,ubsprice:_ubsprice,lbsprice:_lbsprice,fbsprice:_fbsprice,ubsprice1:_ubsprice1,lbsprice1:_lbsprice1,fbsprice1:_fbsprice1,check:check)),);
+                  Navigator.push(context,MaterialPageRoute(builder: (context) => Test1(shopname:shopname,address:address,name:name,contactno:contactno,t1:t1,t2:t2,offer:offer,city:city,ubsprice:_ubsprice,lbsprice:_lbsprice,fbsprice:_fbsprice,ubsprice1:_ubsprice1,lbsprice1:_lbsprice1,fbsprice1:_fbsprice1,check:check)),);
                 },
               ),
             );
